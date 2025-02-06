@@ -4,7 +4,7 @@
 echo "-----> Installing Ghostscript 9.27 using build directory $1"
 
 BUILD_DIR=$1
-PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-9.27-linux-x86_64.tgz"
+PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9550/ghostscript-9.55.0-linux-x86_64.tgz"
 BINARY="ghostscript-9.27-linux-x86_64/gs-927-linux-x86_64"
 LOCATION="$BUILD_DIR/vendor/gs"
 
@@ -17,4 +17,8 @@ mv $BINARY $LOCATION/bin/gs
 echo "-----> Building runtime environment for Ghostscript to $LOCATION"
 
 mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
+
+######################################################
+# DO NOT ADD THIS OLDER VERSION TO THE SYSTEM PATH!! #
+######################################################
+# echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
